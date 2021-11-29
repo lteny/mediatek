@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Testjrxml" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="e6b2a870-51f2-4de6-b682-b6623ad2ecf6">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <subDataset name="ProductDataSet" uuid="64a9fb50-d850-4309-9102-479777c0ba27">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="id" class="java.lang.Long"/>
+        <field name="productName" class="java.lang.String"/>
+        <field name="brand" class="java.lang.String"/>
+        <field name="partNumber" class="java.lang.String"/>
+        <field name="price" class="java.math.BigDecimal"/>
+        <field name="params" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    </subDataset>
+    <subDataset name="ParamsDataSet" uuid="6d4fc239-05bb-424c-8cf7-85f61fee8a04">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="id" class="java.lang.Long"/>
+        <field name="paramName" class="java.lang.String"/>
+        <field name="paramValue" class="java.lang.String"/>
+    </subDataset>
+    <parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <componentElement>
+                <reportElement x="0" y="10" width="780" height="110" uuid="4c2f05db-1349-4710-a5dc-cda45b7b8153"/>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="ProductDataSet" uuid="c13be881-6869-4173-92af-430a8df238af">
+                        <dataSourceExpression><![CDATA[$P{ds}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="110" width="780">
+                        <textField>
+                            <reportElement x="0" y="0" width="30" height="30"
+                                           uuid="a3329109-05e9-4215-ae73-a41b1f187235"/>
+                            <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="30" y="0" width="90" height="30"
+                                           uuid="4b210f3f-47c2-4816-b936-efd6cc7d645c"/>
+                            <textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="120" y="0" width="70" height="30"
+                                           uuid="f35bd38d-e8d6-46eb-aa78-4087cc18343a"/>
+                            <textFieldExpression><![CDATA[$F{brand}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="190" y="0" width="110" height="30"
+                                           uuid="0c8fa9de-0a8b-4d34-82cd-0f66d6136d27"/>
+                            <textFieldExpression><![CDATA[$F{partNumber}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="300" y="0" width="90" height="30"
+                                           uuid="cc933b11-0b12-45bf-8da9-ea6c1819d3c7"/>
+                            <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="390" y="0" width="110" height="30"
+                                           uuid="bd3870d5-ed06-40fb-8df8-0f714957ad18"/>
+                            <textFieldExpression><![CDATA[$F{params}]]></textFieldExpression>
+                        </textField>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
+            <componentElement>
+                <reportElement x="480" y="10" width="300" height="30" uuid="7fbac061-7801-4a38-9813-6cb92f10320f"/>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="ParamsDataSet" uuid="4f47cf3a-69b6-49ec-912e-0291ea165508">
+                        <datasetParameter name="REPORT_DATA_SOURCE">
+                            <datasetParameterExpression><![CDATA[$P{ds}]]></datasetParameterExpression>
+                        </datasetParameter>
+                        <dataSourceExpression><![CDATA[$P{REPORT_CONNECTION}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="30" width="300">
+                        <textField>
+                            <reportElement x="0" y="0" width="33" height="30"
+                                           uuid="a3b867c6-4e78-4a14-9757-7b4b3f965d68"/>
+                            <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="33" y="0" width="137" height="30"
+                                           uuid="6c974d6d-9da9-4bcd-8255-05db8c491da1"/>
+                            <textFieldExpression><![CDATA[$F{paramName}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="170" y="0" width="130" height="30"
+                                           uuid="682b7e04-3180-43c7-81f3-21e7c1b1cdd1"/>
+                            <textFieldExpression><![CDATA[$F{paramValue}]]></textFieldExpression>
+                        </textField>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

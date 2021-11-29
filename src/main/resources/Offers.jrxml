@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Offers" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6044210-4d4d-4906-af01-7efdf1e9bd79">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="expenses json data"/>
+    <style name="NewStyle" fontName="ArialPdf">
+        <paragraph lineSpacing="Single"/>
+    </style>
+    <subDataset name="List" uuid="5b8bceca-ceef-46a5-8518-eac3a9ff3ede">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="paramName" class="java.lang.String"/>
+        <field name="paramValue" class="java.lang.String"/>
+    </subDataset>
+    <parameter name="ds" class="java.util.List" isForPrompting="false"/>
+    <queryString language="json">
+        <![CDATA[products.params]]>
+    </queryString>
+    <field name="id" class="java.lang.Long"/>
+    <field name="productName" class="java.lang.String"/>
+    <field name="brand" class="java.lang.String"/>
+    <field name="partNumber" class="java.lang.String"/>
+    <field name="price" class="java.math.BigDecimal"/>
+    <field name="description" class="java.lang.String"/>
+    <field name="params" class="java.util.Collection"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="85" splitType="Stretch">
+            <rectangle>
+                <reportElement style="NewStyle" x="0" y="0" width="802" height="85" backcolor="#918C8C"
+                               uuid="a69519e4-c120-41fc-a236-7d2ac59a5559"/>
+                <graphicElement>
+                    <pen lineWidth="0.0"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement style="NewStyle" x="0" y="0" width="460" height="85" forecolor="#FFFFFF"
+                               uuid="da3ff724-32f3-41c9-9408-1aaf769caaa6"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" size="26" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Test offer]]></text>
+            </staticText>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="690" y="0" width="110" height="40" forecolor="#FFFFFF"
+                               uuid="2eba7c27-bada-487b-9cab-93d97bf1ff9a"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="28" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="37" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="2" width="46" height="30" uuid="8900bd7e-7df5-418c-9fe6-5b4ef9abbf35"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="46" y="2" width="134" height="30"
+                               uuid="c5fb52ef-71e5-48b0-8d90-1483a9e842c2"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Product name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="180" y="2" width="84" height="30"
+                               uuid="bae19654-8b19-41d6-9f79-614f1c5aa232"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Brand]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="264" y="2" width="84" height="30"
+                               uuid="a14af3b9-fcef-4f5b-b3d1-74cc0f4c2e2c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Part number]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="348" y="2" width="84" height="30"
+                               uuid="95178cf2-930e-4c7b-aebe-c1da5035e40b"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Price]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="432" y="2" width="148" height="30"
+                               uuid="e1d96391-5884-47a7-9228-1c753f740e5b"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Params]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="NewStyle" x="580" y="2" width="222" height="30"
+                               uuid="8746b48c-b4d2-4c2e-bb23-7db806d732e6"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Description]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="215" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="2" width="46" height="30" uuid="491dc8f6-ae33-4ba5-85e5-0795db349584"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="NewStyle" x="46" y="2" width="134" height="30"
+                               uuid="a3782f53-e8db-4268-8cff-dd8afb3cb0b0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="NewStyle" x="180" y="2" width="84" height="30"
+                               uuid="8eabeefe-0bb8-4971-aac8-ecddff9c0b41"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{brand}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="NewStyle" x="264" y="2" width="84" height="30"
+                               uuid="5faa385b-a085-4ce5-ab19-6725929bd054"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{partNumber}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="NewStyle" x="348" y="2" width="84" height="30"
+                               uuid="7c96de17-92fd-45ff-8270-790e4148c7d9"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="NewStyle" x="580" y="2" width="222" height="30"
+                               uuid="e7177b5d-a8ae-4c4b-a890-899e25e3b213"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ArialPdf"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+            </textField>
+            <componentElement>
+                <reportElement x="432" y="2" width="148" height="30" uuid="cb3a9841-8e68-4199-b19d-f1eb16e017dc"/>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="List" uuid="6ed250aa-308c-4999-8613-1bcd415ff858">
+                        <dataSourceExpression>
+                            <![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{ds})]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="30" width="148">
+                        <textField>
+                            <reportElement x="0" y="0" width="50" height="30"
+                                           uuid="d35fd104-364b-4a12-8b34-a146eb5799a2"/>
+                            <textFieldExpression><![CDATA[$F{paramName}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="50" y="0" width="50" height="30"
+                                           uuid="70b99ab5-e411-4642-9340-b990a6ad6826"/>
+                            <textFieldExpression><![CDATA[$F{paramValue}]]></textFieldExpression>
+                        </textField>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
